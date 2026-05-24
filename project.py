@@ -1,5 +1,3 @@
-import datetime
-
 class OnlineSalesRegisterCollector:
 
     def __init__(self):
@@ -97,17 +95,3 @@ class OnlineSalesRegisterCollector:
         except ValueError as e:
             return e
         return f'+7{telephone_number}'
-
-x = OnlineSalesRegisterCollector()
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-x.add_item_to_cheque('кола')
-print(x.check_amount())
