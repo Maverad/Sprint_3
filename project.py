@@ -1,3 +1,5 @@
+import datetime
+
 class OnlineSalesRegisterCollector:
 
     def __init__(self):
@@ -54,12 +56,8 @@ class OnlineSalesRegisterCollector:
         for i in self.__name_items:
             if self.__tax_rate[i] == 20:
                 twenty_percent_tax.append(i)
-        if self.__number_items <= 10:
-            for i in twenty_percent_tax:
-                total.append(self.__item_price[i])
-        else:
-            for i in twenty_percent_tax:
-                total.append(self.__item_price[i] - self.__item_price[i] * 10 / 100)
+        for i in twenty_percent_tax:
+            total.append(self.__item_price[i])
         for i in total:
             tax += i * 0.2
         return tax
@@ -71,12 +69,8 @@ class OnlineSalesRegisterCollector:
         for i in self.__name_items:
             if self.__tax_rate[i] == 10:
                 ten_percent_tax.append(i)
-        if self.__number_items <= 10:
-            for i in ten_percent_tax:
-                total.append(self.__item_price[i])
-        else:
-            for i in ten_percent_tax:
-                total.append(self.__item_price[i] - self.__item_price[i] * 10 / 100)
+        for i in ten_percent_tax:
+            total.append(self.__item_price[i])
         for i in total:
             tax += i * 0.1
         return tax
@@ -95,3 +89,9 @@ class OnlineSalesRegisterCollector:
         except ValueError as e:
             return e
         return f'+7{telephone_number}'
+    
+    @staticmethod
+    def get_date_and_time():
+        date_and_time = []
+        now = datetime.datetime.now()
+        date = []
